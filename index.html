@@ -2,31 +2,25 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My App</title>
-  <style>
-    .responsive-iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100vw;
-      height: 100vh;
-      border: none;
-    }
-  </style>
+  <title>Minimal App</title>
+<style>
+  html, body, iframe {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+</style>
 </head>
 <body>
-  <div> 
-    <div style="position: relative; width: 100vw; height: 100vh; overflow: auto;">
-      <iframe id="myframe" class="responsive-iframe" src="" allowFullScreen></iframe>
-    </div>
-  </div>
+  <iframe id="myframe" width="100%" height="100%" frameborder="0"></iframe>
+
   <script>
     const apps = new URL(window.location);
     const formUrl = apps.searchParams.get('apps');
-    const url = decodeURIComponent(formUrl)
-          document.getElementById('myframe').src = url
+    const url = decodeURIComponent(formUrl);
+    document.getElementById('myframe').src = url;
   </script>
 </body>
 </html>
